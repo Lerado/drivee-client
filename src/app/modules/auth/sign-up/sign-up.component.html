@@ -1,0 +1,40 @@
+<div class="flex flex-col w-full">
+
+  <h1 class="text-2xl font-bold text-center">Just one step away !</h1>
+
+  <p class="mt-6 text-sm text-center text-gray-500">We are delighted you choose Drivee.
+  </p>
+
+
+  <form [formGroup]="signUpForm" class="flex flex-col gap-8 mt-12">
+
+    <!-- Name field -->
+    <mat-form-field [subscriptSizing]="'dynamic'" class="w-full">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text">
+    </mat-form-field>
+
+    <!-- Email field -->
+    <mat-form-field [subscriptSizing]="'dynamic'" class="w-full">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <!-- Password field -->
+    <mat-form-field [subscriptSizing]="'dynamic'" class="w-full">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+
+    <p class="text-sm text-center text-gray-500">
+      Already have an account ? <a routerLink="/sign-in" class="text-[#673ab7]">Sign in</a>
+    </p>
+
+    <!-- Submit button -->
+    <button (click)="signUp()" [disabled]="signUpForm.invalid || signUpForm.pristine" mat-flat-button color="primary" class="w-1/2 mx-auto mt-16">
+      Let me in !
+    </button>
+
+  </form>
+
+</div>

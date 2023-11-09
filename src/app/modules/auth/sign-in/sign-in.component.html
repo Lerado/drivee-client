@@ -1,0 +1,35 @@
+<div class="flex flex-col w-full">
+
+  <h1 class="text-2xl font-bold text-center">Hey fellow mate !</h1>
+
+  <p class="mt-6 text-sm text-center text-gray-500">Happy to see you again. We just need to check who exactly you are.
+  </p>
+
+
+  <form [formGroup]="signInForm" class="flex flex-col gap-8 mt-12">
+
+    <!-- Email field -->
+    <mat-form-field [subscriptSizing]="'dynamic'" class="w-full">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="username" type="email">
+    </mat-form-field>
+
+    <!-- Password field -->
+    <mat-form-field [subscriptSizing]="'dynamic'" class="w-full">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+
+    <p class="text-sm text-center text-gray-500">
+      Already have an account ? <a routerLink="/sign-up" rout class="text-[#673ab7]">Create an account</a>
+    </p>
+
+    <!-- Submit button -->
+    <button (click)="signIn()" [disabled]="signInForm.invalid || signInForm.pristine || loading()" mat-flat-button
+      color="primary" class="w-1/2 mx-auto mt-16">
+      Let me in !
+    </button>
+
+  </form>
+
+</div>
